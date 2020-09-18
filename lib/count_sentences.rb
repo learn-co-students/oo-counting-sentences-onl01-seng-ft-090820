@@ -3,18 +3,33 @@ require 'pry'
 class String
 
   def sentence?
-    
-  end
-
+    if self.end_with?(".")
+      return true
+    else 
+      false
+    end 
+  end 
+  
+  
   def question?
-
+    if self.end_with?("?")
+      return true
+    else 
+      false
+    end 
   end
+
 
   def exclamation?
-
-  end
+    if self.end_with?("!")
+      return true
+    else 
+      false
+    end 
+  end 
 
   def count_sentences
-
-  end
+    array = self.split(/\.|\!|\?/)
+    array.select {|sentence| sentence.length > 2}.count
+  end 
 end
