@@ -27,20 +27,15 @@ class String
   end
 
   def count_sentences
-    if self.include?("." || "?" || "!") != true
-      return 0
-    else
       count = []
-      sentences = self.split("." || "?" || "!")
+      sentences = self.split(/[.?!]/)
       sentences.each do |sentence|
         if
-          sentence != "." || "?" || "!"
+          sentence != ""
           count << sentence
         end
       end
-      binding.pry
       return count.length
-    end
   end
 
 end
